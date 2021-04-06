@@ -10,7 +10,6 @@ import org.springframework.context.annotation.*;
 @Import(AppConfig.class)
 @ComponentScan(value = "com.Kiiko.springcourse.post_processors")
 public class AnotherAppConfig {
-
     @Bean
     @Lazy
     public BeanF beanF() {

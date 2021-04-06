@@ -1,11 +1,9 @@
 package com.Kiiko.springcourse.config;
 
 import com.Kiiko.springcourse.beans.*;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@EnableConfigurationProperties
 @PropertySource("classpath:beans.properties")
 public class AppConfig {
 

@@ -1,14 +1,13 @@
 package com.Kiiko.springcourse.beans;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "bean.c")
 public class BeanC implements Validator{
+    @Value("${bean.c.name}")
     private String name;
+    @Value("${bean.c.value}")
     private int value;
 
     public void initMethod() {
@@ -17,22 +16,6 @@ public class BeanC implements Validator{
 
     public void destroyMethod() {
         System.out.println("---destroy method bean C---");
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
     }
 
     @Override
